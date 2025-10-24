@@ -1,1 +1,356 @@
-This is ser163 blog!!!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ser163 - Personal Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        header:hover {
+            transform: translateY(-5px);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 1.3rem;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h2 i {
+            color: #3498db;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .tech-item {
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+        
+        .blog-link {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+        
+        .blog-link:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        tr:hover {
+            background: #f1f8ff;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            font-size: 1.1rem;
+            margin-top: 40px;
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .fun-fact {
+            background: #f39c12;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header, section {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="avatar">
+                <i class="fas fa-code"></i>
+            </div>
+            <h1>Hello, World! 👋 I'm Ser163</h1>
+            <div class="quote">Programs change the world, and we are the creators.</div>
+        </header>
+        
+        <section>
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p>I'm a passionate developer currently focusing on the <strong>Hisafe</strong> project.</p>
+            <p>On my technical journey, I maintain a constant enthusiasm for learning. I'm currently actively studying <strong>Rust</strong> and <strong>Go</strong>, two modern, high-performance programming languages. I enjoy the process of building reliable and efficient solutions with code.</p>
+            <p><strong><i class="fas fa-comments"></i> Technical Topics:</strong><br>
+            If you have any questions about <strong>PHP, Rust, Go, or Linux</strong>, I'd be happy to discuss and exchange ideas.</p>
+            <div class="fun-fact">
+                <i class="fas fa-seedling"></i>
+                <span>Fun Fact: I'm a vegetarian, a lifestyle that has given me deeper appreciation for the details of life.</span>
+            </div>
+        </section>
+        
+        <section>
+            <h2><i class="fas fa-tools"></i> Tech Stack & Interests</h2>
+            <div class="tech-stack">
+                <span class="tech-item">PHP</span>
+                <span class="tech-item">Go</span>
+                <span class="tech-item">Rust</span>
+                <span class="tech-item">C#</span>
+                <span class="tech-item">Vue</span>
+                <span class="tech-item">Backend Development</span>
+                <span class="tech-item">System Tools</span>
+                <span class="tech-item">Web Services</span>
+                <span class="tech-item">Password Security</span>
+            </div>
+        </section>
+        
+        <section>
+            <h2><i class="fas fa-blog"></i> My Blog</h2>
+            <p>I regularly share technical insights and life reflections on my personal blog. Welcome to visit and exchange ideas:</p>
+            <a href="https://ser163.xlog.app" class="blog-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Visit My Blog: https://ser163.xlog.app
+            </a>
+        </section>
+        
+        <section>
+            <h2><i class="fas fa-laptop-code"></i> Open Source Projects</h2>
+            <p>Here are some of my interesting open-source projects:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Project</th>
+                        <th>Language</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="https://github.com/ser163/random-char-generator-go" target="_blank">Random Char Generator</a></td>
+                        <td>Go</td>
+                        <td>A Go-based tool for generating random characters.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/ser163/password-management-platform" target="_blank">Password Management Platform</a></td>
+                        <td>PHP</td>
+                        <td>An internal password management platform suitable for small and medium-sized enterprises.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/ser163/github-webhook-forward" target="_blank">GitHub Webhook Forwarder</a></td>
+                        <td>PHP</td>
+                        <td>A tool for centrally forwarding GitHub Webhook requests.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/ser163/domain-expiration-checker" target="_blank">Domain Expiration Checker</a></td>
+                        <td>Go</td>
+                        <td>Written in Go, used to monitor domain expiration times.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/ser163/treehole-password-frontend" target="_blank">Treehole Password Manager - Frontend</a></td>
+                        <td>Vue</td>
+                        <td>Frontend source code for the Treehole Password Manager.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/ser163/webdav-windows-tool" target="_blank">WebDav Windows Tool</a></td>
+                        <td>C#</td>
+                        <td>A handy tool for using the WebDav protocol on Windows.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <footer>
+            <p>Thanks for reading! Looking forward to meeting you in the world of code!</p>
+            <p>© 2023 Ser163</p>
+        </footer>
+    </div>
+    
+    <script>
+        // 添加简单的滚动动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
